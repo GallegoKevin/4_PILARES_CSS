@@ -1,3 +1,74 @@
+/* SELECTORES*/
+/*Ejemplos:*/
+
+/*Selector de Etiqueta:*/
 h2 {
     color: red;
+}
+/*Selector de clase*/
+
+.example {
+    background-color: rgb(150, 255, 255);
+}
+
+/*Selector de ID*/
+
+#selectorID_first {
+    background-color: black;
+    color: white;
+}
+
+#selectorID_second {
+    background-color: black;
+    color: white;
+}
+
+#selectorID_third {
+    background-color: black;
+    color: white;
+}
+
+#selectorID_fourth{
+    background-color: yellow;
+}
+/*HERENCIA*/
+p {
+    color: brown;
+}
+a {
+    color: inherit;
+}
+
+/*CASCADA*/
+span {
+    color: orangered;
+}
+
+span {
+     color: purple;
+}
+
+span {
+    color: indigo;
+}
+
+/*ESPECIFICIDAD*/
+
+/*selector de etiqueta: 1*/
+u{
+    color: brown;
+}
+/*!important: infinito*/
+u {
+    color: blue !important;
+}
+/*selector de clase : 10*/
+.es_class {
+    color: red;
+}
+/*selector de id: 100*/
+
+#es_id { 
+    color: green;
+
 }

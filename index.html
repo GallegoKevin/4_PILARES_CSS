@@ -1,30 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 4 PILARES CSS</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
     <header>
         <h1>4 PILARES CSS</h1>
+        <hr>
     </header>
     <main>
+
         <section>
-            <h2 class="">1. Selectores:</h2>
+            <h2>1. Selectores:</h2>
             <p>Pueden ser:</p>
+
             <ul>
-                <li>Selectores de etiquetas: (por ejemplo, h1, p, div)</li>
-                <li>Selectores de clase (por ejemplo, .clase)</li>
-                <li>Selectores de ID: (por ejemplo, #id)</li>
+
+                <li id="selectorID_first"><b>Selectores de etiquetas:</b></li>
+                <p> Pueden ser: h1, p, div, a, etc.<br>
+                    Ejemplo:
+                </p>
+
+                <p class="example">
+                    <u>HTML:</u><br>
+                    &lt;h2&gt;1. Selectores:&lt;/h2&gt;
+                    <br>
+                    <u>CSS:</u><br>
+
+                    h2 {
+                    color: red;
+                    }
+                </p>
+
+                <li id="selectorID_second"><b>Selectores de clase:</b></li>
+                <p> Para agregar o usar una clase en HTML se utiliza el atributo "class" seguido del nombre de la clase.
+                </p>
+
+                <p>Por Ejemplo:</p>
+                
+                <p class="example">
+                    <u>HTML:</u><br>
+                    &lt;p class="example"&gt; HTML &lt;/p&gt;
+                </p>
+
+                <p>
+                    Para definir la regla de estilo para una clase en css. Primero se debe escribir el hash (#) seguido
+                    del nombre que se designo en el atributo "id" en HTML.
+                </p>
+
+                <p>Por Ejemplo:</p>
+
+                <p class="example">
+                    <u>CSS:</u><br>
+
+                    .example {
+                    background-color: rgb(150, 255, 255);
+                    }
+                </p>
+
+                <!--Este codigo lo que hace es cambiar--->
+
+                <li id="selectorID_third"><b>Selectores de ID:</b></li>
+                <p>Para agregar un ID a un elemento HTML se utiliza el atributo "id" seguido del "nombre del ID".</p>
+                <p>Por Ejemplo:</p>
+                <p class="example">
+                    <u>HTML:</u><br>
+                    &lt;li id="selectorID_third"&gt;Selectores de ID&lt;/li&gt;
+                </p>
+
+                <p>
+                    Para definir la regla de estilo para un ID en css. Primero se debe escribir un punto seguido del
+                    nombre de que se designo en el atributo "class" en HTML.
+                </p>
+
+                <p>Por Ejemplo:</p>
+
+                <p class="example">
+                    <u>CSS:</u><br>
+
+                    #selectorID_third {
+                    background-color: yellow;
+                    }
+                </p>
             </ul>
         </section>
 
         <section>
+            <h2>2. Herencia</h2>
+            <p>Proceso por el cual los estilos aplicados a un elemento padre se transmiten a sus elementos hijos.</p>
+            <p>Por ejemplo:</p>
+            <p class="example">
+                HTML: <br>
 
+                &lt;p&gt;Por ejemplo:&lt;/p&gt; <br>
+                &lt;p&gt;HTML&lt;/p&gt;
+                <br>
+             </p>
+             <p class="example">   
+                CSS: 
+                <br>
+                p {
+                    color: brown;
+                }
+                <br>
+                a {
+                    color: inherit;
+                }
+            </p>
+            <p>Todas las etiquetas "p" heredarian el estilo que se le aplico en css y tambien se puede ver que se aplico en css el color "inherit"  a la etiqueta "a" para que herede el color de su elemento padre ("p"). <a href="#"> Ver más</a> </p>
+           
         </section>
 
+        <section>
+            <h2>3. Cascada</h2>
+            <p> Determina qué reglas de estilo se aplican cuando hay múltiples reglas que coinciden con un elemento. <span>Basado en orden, origen y especificidad.</span></p>
+            <p>Por ejemplo:</p>
+            <p class="example">
+                HTML: <br>
+                &lt;span&gt;Basado en orden, origen y especificidad.&lt;/span&gt; <br>   
+             </p>
+             <p class="example">   
+                CSS: <br>
+                span{
+                    color: orangered;
+                }
+                <br>
+                span {
+                     color: purple;
+                }
+                <br>
+                span{
+                    color: indigo;
+                }
+            </p>
+            <p>En este caso se aplicaria el valor indigo a la etiqueta span, debido a que aparece en ultimo lugar el codigo. </p>
+        </section>
+
+        <section>
+            <h2>2. Especificidad</h2>
+            <p>Es un valor que determina qué estilo se aplicará a un elemento cuando hay múltiples reglas que compiten por afectarlo.
+            <u class="es_class" id="es_id" style="color:chartreuse">La especificidad se calcula según el tipo de selector (etiqueta, clase, ID, etc.) </u></p>
+            <p>Valor de selectores:</p>
+            <ul>
+                <li>Selector de etiqueta: <b>1</b></li>
+                <li>Selector de clase: <b>10</b></li>
+                <li>Selector dde id: <b>100</b></li>
+                <li>Inline (style={propiedad: valor;}): <b>1000</b></li>
+                <li>!important : <b>infinito</b></li>
+            </ul>
+            <p>Por ejemplo:</p>
+            <p class="example">
+                HTML: <br>
+                &lt;u class="es_class" id="es_id" style="color:chartreuse"&gt;La especificidad se calcula según el tipo de selector (etiqueta, clase, ID, etc.)&lt;/u&gt; <br>   
+             </p>
+             <p class="example">   
+                CSS: 
+                <br>
+
+                <b>selector de etiqueta: 1</b> <br>
+                u{
+                    color: brown;
+                }
+                <br>
+                <b>!important: infinito</b> <br>
         
-    </main>    
+                u {
+                    color: blue !important;
+                }
+
+                <br>
+
+                <b>selector de clase : 10</b> <br>
+               
+                .es_class {
+                    color: red;
+                }
+                <br>
+
+                <b>selector de id: 100</b><br>
+                
+                #es_id { 
+                    color: green;
+                
+                }
+            </p>
+            <p>En este caso se aplicaria el valor <b>"blue"</b>,  debido a que !important vale infinito</p>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        Derechos Reservados _ Kevin &copy; 2024
+    </footer>
 </body>
+
 </html>
